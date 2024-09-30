@@ -1,13 +1,13 @@
 ---
-import Footer from '../components/Footer.astro'
+import Footer from '../components/Footer.astro';
 
-import Portfolio from '../components/icons/Portfolio.astro' 
-import GitHub from '../components/icons/GitHub.astro' 
-import LinkedIn from '../components/icons/LinkedIn.astro' 
-import Mail from '../components/icons/Mail.astro' 
+import Portfolio from '../components/icons/Portfolio.astro'; 
+import GitHub from '../components/icons/GitHub.astro'; 
+import LinkedIn from '../components/icons/LinkedIn.astro'; 
+import Mail from '../components/icons/Mail.astro'; 
 
 const title = 'Linktree de Andres - Desarrollador y Programador Web';
-const description = '';
+const description = 'Bienvenido al Linktree de Andres Araque, un desarrollador y programador web.';
 const keywords = 'Andres Araque, Desarrollo Web, Linktree';
 ---
 
@@ -15,8 +15,9 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
   <meta charset="UTF-8" />
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="canonical" href="https://andresaraque.com" />
 
   <meta name="generator" content={Astro.generator} />
@@ -25,22 +26,24 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
   <style is:global>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-    *, *::before, *::after{
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    body{
+    body {
       font-family: 'Roboto', sans-serif;
       background-color: #000;
       color: #00ffcc;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      height: 100vh; /* Asegúrate de que el body ocupe toda la altura */
       margin: 0;
-      overflow: hidden;
-      position: relative;
+      padding: 0;
+      overflow: hidden; /* Evita el scroll */
     }
 
     .background {
@@ -53,7 +56,7 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
       overflow: hidden;
     }
 
-    .background::before{
+    .background::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -64,28 +67,29 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
       animation: moveBackground 10s linear infinite;
     }
 
-    @keyframes moveBackground{
+    @keyframes moveBackground {
       from {
         background-position: 0 0;
       }
-      to{
+      to {
         background-position: 0 100%;
       }      
     }
 
-    .container{
+    .container {
       text-align: center;
-      background-color: rgba(0, 0, 0, .2);
-      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 20px 10px;
       border-radius: 20px;
-      box-shadow: 0 0 20px #00ffcc;
+      box-shadow: 0 0 15px #00ffcc;
       z-index: 1;
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -30%);
       max-width: 400px;
-      width: 100%;
+      width: 90%;/* Cambiado a 90% para tabletas */
+      margin: auto; /* Asegura el centrado */
+      position: relative;
+      flex-grow: 0;
+      margin-bottom: 120px;
+      padding-bottom: 20px;
     }
 
     .profile {
@@ -93,7 +97,7 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
       margin-bottom: 30px;
     }
 
-    .profile-img{
+    .profile-img {
       width: 120px;
       max-width: 100%;
       border-radius: 50px;
@@ -102,20 +106,20 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
       box-shadow: 0 0 15px #00ffcc, 0 0 20px #00ffcc;
     }
 
-    .profile-img:hover{
+    .profile-img:hover {
       transform: scale(1.1);
       box-shadow: 0 0 20px #00ffcc, 0 0 70px #00ffcc;
     }
 
-    h1{
-      font-size: 32px;
+    h1 {
+      font-size: 1.8rem;
       margin: 10px 0;
       color: #00ffcc;
       text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     }
 
-    p{
-      color:#fff;
+    p {
+      color: #fff;
       margin-bottom: 20px;
       text-shadow: 0 0 10px #00ffcc;
     }
@@ -126,86 +130,138 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
       justify-content: center;
       background-color: #00ffccda;
       color: #000;
-      padding: 15px;
-      margin: 15px 0;
+      padding: 10px;
+      margin: 10px 0;
       border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 1rem;
       box-shadow: 0 0 10px #00ffccda;
       transition: background-color .3s, transform .3s, box-shadow .3s;
       animation: neonGlow 1.5s ease-in-out infinite alternate;
-      max-width: 250px;
+      max-width: 200px;
       width: 100%;
     }
     
-    .links a .icono{
+    .links a .icono {
       margin-right: 10px;
       width: 24px;
       height: 24px;
     }
 
     @keyframes neonGlow {
-      from{
+      from {
         box-shadow: 0 0 10px #00ffccda;
       }
-      to{
+      to {
         box-shadow: 0 0 10px #00ffccda, 0 0 20px #00ffccda;
       }
     }
 
-    .links a:hover{
+    .links a:hover {
       background-color: #15B392;
       transform: scale(1.05);
       box-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc;
     }
 
-    .links a:active{
+    .links a:active {
       transform: scale(.98);
     }
 
-    @media (max-width: 768px){
-      .container{
+    @media (min-width: 1024px) {
+      .container {
+        transform: scale(.7);
+        max-width: 400px;
         padding: 20px;
-        margin: 30px 0;
-        max-width: 80%;
+      margin-bottom: 0px;
       }
 
-      h1{
-        font-size: 24px;
-      }
-
-      p{
-        font-size: 16px;
-        margin-bottom: 15px;
+      h1 {
+        font-size: 1.6rem;
       }
 
       .links a {
-        font-size: 16px;
-        padding: 12px;
-        margin: 10px 0;
+        font-size: 1.1rem;
+        padding: 10px;
       }
     }
 
-    @media (max-width: 480px){
-      .container{
-        padding: 10px;
-        margin: 20px 0;
-        max-width: 80%;
+    @media (max-width: 768px) {
+      body {
+        height: 100vh; /* Asegura que el body ocupe toda la pantalla */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centrar verticalmente */
+        align-items: center; /* Centrar horizontalmente */
       }
 
-      h1{
-        font-size: 20px;
+      .container {
+        max-width: 80%;
+        margin: auto; /* Asegura el centrado horizontal */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente el contenido dentro del contenedor */
+      }
+
+      h1 {
+        font-size: 1.5rem;
       }
 
       .links a {
-        font-size: 14px;
+        font-size: 1rem;
+        padding: 12px;
+        margin: 10px 0;
+      }
+
+      footer {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: auto;
+        max-width: 80%;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .links a {
+        font-size: 0.9rem;
         padding: 8px;
       }
 
-      .profile-img{
-        width: 80px
+      .profile-img {
+        width: 80px;
       }
+    }
+
+    /* Para navegadores Webkit (Chrome, Safari, Opera) */
+    ::-webkit-scrollbar {
+      width: 12px; /* Ancho del scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.5); /* Color de fondo del track */
+      border-radius: 10px; /* Esquinas redondeadas */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #00ffcc; /* Color del thumb */
+      border-radius: 10px; /* Esquinas redondeadas */
+      transition: background 0.3s; /* Transición suave al pasar el mouse */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00d4ff; /* Color del thumb al pasar el mouse */
+    }
+
+    /* Para Firefox */
+    * {
+      scrollbar-width: thin; /* Hacer el scrollbar más delgado */
+      scrollbar-color: #00ffcc rgba(0, 0, 0, 0.5); /* Color del thumb y del track */
     }
   </style>
 </head>
@@ -215,8 +271,7 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
   
   <div class="container">
     <div class="profile">
-      <img src="../../public/formal.webp" alt="Profile Image" class="profile-img">
-      <div class="profile-scan"></div>
+      <img src="/formal.webp" alt="Profile Image" class="profile-img">
       <h1>Andres Araque</h1>
       <p>Backend Developer</p>
     </div>
@@ -237,5 +292,5 @@ const keywords = 'Andres Araque, Desarrollo Web, Linktree';
     </div>
   </div>
 
-  <Footer/>
+  <Footer />
 </body>

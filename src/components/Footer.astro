@@ -9,34 +9,33 @@
 </footer>
 
 <style>
+  footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #00ffcc;
+    text-align: center;
+    padding: 20px; /* Aumenta el padding para más espacio */
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    width: 100%;/* Asegúrate de que se empuje al final del contenido */
+    border: none;
+    box-shadow: none;
+  }
 
-footer {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #00ffcc;
-  text-align: center;
-  padding: 5px;
-  margin: 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
+  .footer-container {
+    max-width: 400px; /* Mantén el ancho máximo */
+    margin: auto; /* Centramos el footer */
+    padding: 0;
+  }
 
-.footer-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 0;
-}
+  .footer-container a {
+    color: #00ffcc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
 
-.footer-container a {
-  color: #00ffcc;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-container a:hover {
-  color: #00d4ff;
-}
+  .footer-container a:hover {
+    color: #00d4ff;
+  }
 
 </style>
