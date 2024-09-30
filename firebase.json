@@ -16,8 +16,8 @@
     "public": "dist",
     "rewrites": [
       {
-        "source": "/proyecto/**",
-        "destination": "https://tu-proyecto-en-netlify.netlify.app"
+        "source": "/upcoming/**",
+        "destination": "https://personal-upcoming.netlify.app/"
       },
       {
         "source": "/**",
