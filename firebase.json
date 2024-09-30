@@ -14,10 +14,14 @@
   ],
   "hosting": {
     "public": "dist",
-    "rewrites":[
+    "rewrites": [
+      {
+        "source": "/proyecto/**",
+        "destination": "https://tu-proyecto-en-netlify.netlify.app"
+      },
       {
         "source": "/**",
-        "destination": "/index.html" 
+        "destination": "/index.html"
       }
     ],
     "ignore": [
